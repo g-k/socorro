@@ -740,3 +740,78 @@ LAST_LOGIN_MAX = config(
 
 
 GOOGLE_AUTH_HELP_URL = 'https://wiki.mozilla.org/Socorro/GoogleAuth'
+
+
+CSP_REPORT_ONLY = True
+
+CSP_REPORT_URI = '/__cspreport__'
+
+CSP_BASE_URI = (
+    'crash-stats.mozilla.com',
+)
+
+CSP_DEFAULT_SRC = (
+    "'self'",
+    'https://accounts.google.com',
+)
+
+CSP_IMAGE_SRC = ()  # same as default src
+
+CSP_SCRIPT_SRC = (
+    "'self'",
+    "'unsafe-inline'",
+    'https://apis.google.com',
+    'https://www.google-analytics.com',
+)
+
+CSP_STYLE_SRC = (
+    "'self'",
+)
+
+CSP_FONT_SRC = (
+    "'self'",
+)
+
+CSP_WORKER_SRC = (
+    "'self'",
+)
+
+CSP_FRAME_ANCESTORS = (
+    "'none'",
+)
+
+CSP_CONNECT_SRC = (
+    "'self'",
+    'analysis-output.telemetry.mozilla.org',
+    'http://www.w3.org',
+    'https://accounts.google.com',
+    'https://androidpay.google.com',
+    'https://apis.google.com',
+    'https://clients*.google.com',
+    'https://content.googleapis.com',
+    'https://domains.google.com',
+    'https://myaccount.google.com',
+    'https://plus.google.com',
+    'https://plus.googleapis.com',
+    'https://ssl.gstatic.com',
+    'https://stats.g.doubleclick.net',
+    'https://www.google.com',
+    'https://www.googleapis.com',
+    'https://www.gstatic.com',
+)
+
+CSP_FORM_ACTION = (
+    "'self'",
+)
+
+CSP_BLOCK_ALL_MIXED_CONTENT = True
+
+CSP_PLUGIN_TYPES = (
+    'application/binary',
+    'application/font-woff',
+    'application/javascript',
+    'application/json',
+    'text/css',
+    'text/html',
+    'text/javascript',
+)
