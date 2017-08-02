@@ -11,6 +11,7 @@ from django.core.cache import cache
 from django.views.decorators.http import require_POST
 from django.contrib import auth
 from django.utils.encoding import smart_bytes
+from django.views.decorators.csrf import csrf_exempt
 
 from oauth2client import client, crypt
 
@@ -73,6 +74,7 @@ def oauth2_signout(request):
 
 
 @require_POST
+@csrf_exempt
 @json_view
 def oauth2_signin(request):
     token = request.POST['token']
