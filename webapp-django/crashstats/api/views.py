@@ -407,11 +407,7 @@ def _describe_model(model):
     model_inst = model()
     params = list(model_inst.get_annotated_params())
     params.sort(key=lambda x: (not x['required'], x['name']))
-    methods = []
-    if model.get:
-        methods.append('GET')
-    elif model.post:
-        methods.append('POST')
+    assert model.get and not model.post
 
     docstring = model.__doc__
     if docstring:
@@ -433,7 +429,6 @@ def _describe_model(model):
         'url': reverse('api:model_wrapper', args=(model.__name__,)),
         'parameters': params,
         'defaults': getattr(model, 'defaults', {}),
-        'methods': methods,
         'docstring': docstring,
         'required_permissions': required_permissions,
         'deprecation_warning': getattr(model, 'deprecation_warning', None),

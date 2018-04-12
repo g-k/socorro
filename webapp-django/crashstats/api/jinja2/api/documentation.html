@@ -47,9 +47,9 @@
             <h2><a href="#{{ endpoint.name }}">{{ endpoint.name }}</a></h2>
         </div>
         <div class="body">
-            <form class="testdrive" data-methods="{{ endpoint.methods | to_json }}" {% if endpoint.methods == ['GET'] %}data-no-csrf{% endif %}>
+            <form class="testdrive" data-methods="[\"GET\"]" data-no-csrf>
                 <p class="url">
-                    <b>{{ ' | '.join(endpoint.methods) }}</b>
+                    <b>GET</b>
                     <code>{{ base_url }}{{ endpoint.url }}</code>
                 </p>
 
